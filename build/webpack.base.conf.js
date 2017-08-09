@@ -14,13 +14,14 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    filename: '[name].js'
+    filename: '[name].[hash:5].js'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     // fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
+      'utils': path.resolve(__dirname, '../src/utils'),
       'less': path.resolve(__dirname, '../src/less')
     }
   },
@@ -47,20 +48,20 @@ module.exports = {
         test: /\.css$/,
         use: [{
             loader: "style-loader" // creates style nodes from JS strings
-        }, {
-            loader: "css-loader", // translates CSS into CommonJS
-            query: { 
-              modules: true,
-              localIdentName: '[name]___[hash:base64:5]'
-            }
         },
-        // {
-        //   loader: 'px2rem-loader',
-        //   options: {
-        //     remUnit:75,
-        //     remPrecision:8
-        //   }
-        // },
+        {
+          loader: "css-loader", // translates CSS into CommonJS
+          query: { 
+            modules: true,
+            localIdentName: '[name]___[hash:base64:5]'
+          }
+        },
+        {
+          loader: 'lmw-px2rem-loader',
+          options: {
+            remUnit:100
+          }
+        },
         {
           loader: 'postcss-loader'
         }]
@@ -69,23 +70,24 @@ module.exports = {
         test: /\.less$/,
         use: [{
           loader: "style-loader" // creates style nodes from JS strings
-        }, {
+        },
+        {
           loader: "css-loader", // translates CSS into CommonJS
           query: { 
             modules: true,
             localIdentName: '[name]___[hash:base64:5]'
           }
         },
-        // {
-        //   loader: 'px2rem-loader',
-        //   options: {
-        //     remUnit:75,
-        //     remPrecision:8
-        //   }
-        // },
+        {
+          loader: 'lmw-px2rem-loader',
+          options: {
+            remUnit:100
+          }
+        },
         {
           loader: 'postcss-loader'
-        }, {
+        },
+        {
           loader: "less-loader" // compiles Less to CSS
         }]
       }
