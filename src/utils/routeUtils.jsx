@@ -1,9 +1,11 @@
+import React from 'react'
+import { Route } from 'react-router-dom'
+
 /**
  * 按需加载封装
  * getComponent is a function that returns a promise for a component
  * It will not be called until the first mount
  */
-import React from 'react'
 export const asyncComponent = (getComponent) => {
   return class AsyncComponent extends React.Component {
     static Component = null
@@ -26,3 +28,10 @@ export const asyncComponent = (getComponent) => {
     }
   }
 }
+
+export const RouteWithSubRoutes = (route) => (
+  <Route path={route.path} render={props => (
+    // pass the sub-routes down to keep nesting
+    <route.component {...props} routes={route.routes} />
+  )} />
+)

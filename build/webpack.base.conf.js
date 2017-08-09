@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    filename: '[name].[hash:5].js'
+    filename: '[name].[hash:7].bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -42,6 +42,22 @@ module.exports = {
           options: {
             presets: ['env', 'stage-0', 'react']
           }
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(swf|woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
       {

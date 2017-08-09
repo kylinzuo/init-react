@@ -4,8 +4,8 @@ function kylin (state = 'kylinzuo', action) {
   return state
 }
 
-const todoApp = combineReducers({
+const appStore = combineReducers({
   kylin
 })
 
-export default todoApp
+export default appStore
