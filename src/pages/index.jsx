@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
+import { Switch, Route } from 'react-router-dom'
+import { asyncComponent } from '@utils/routeUtils'
 import Styles from './index.less'
-import { RouteWithSubRoutes } from '@utils/routeUtils'
 import { isMobile } from '@utils'
+
+const IndexContainer = asyncComponent(() =>
+  System.import('./index-container').then(module => module.default)
+)
+const QuotationPage = asyncComponent(() =>
+  System.import('./quotation').then(module => module.default)
+)
 
 class IndexPage extends Component {
   render () {
-    const { routes } = this.props
     return (
       <div
         className={classnames(Styles['theme-light'], Styles['index-page'])}
@@ -14,12 +21,10 @@ class IndexPage extends Component {
           width: isMobile() ? '100%' : '650px'
         }}
       >
-        <h1>IndexPage</h1>
-        {
-          routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
-          ))
-        }
+        <Switch>
+          <Route path='/quotation' component={QuotationPage} />
+          <Route path='/' component={IndexContainer} />
+        </Switch>
       </div>
     )
   }

@@ -1,36 +1,6 @@
 import React from 'react'
-import { asyncComponent, RouteWithSubRoutes } from '@utils/routeUtils'
-
-const routes = [
-  {
-    path: '/',
-    component: asyncComponent(() =>
-      System.import('./pages').then(module => module.default)
-    ),
-    routes: [
-      {
-        path: '/',
-        component: asyncComponent(() =>
-          System.import('./pages/index-container').then(module => module.default)
-        ),
-        routes: [
-          {
-            path: '/personal',
-            component: asyncComponent(() =>
-              System.import('./pages/personal').then(module => module.default)
-            )
-          }
-        ]
-      },
-      {
-        path: '/quotation',
-        component: asyncComponent(() =>
-          System.import('./pages/quotation').then(module => module.default)
-        )
-      }
-    ]
-  }
-]
+import { Route } from 'react-router-dom'
+import { asyncComponent } from '@utils/routeUtils'
 
 export default (
   <div className='root' style={{
@@ -38,10 +8,10 @@ export default (
     height: '100%',
     overflow: 'hidden'
   }}>
-    {
-      routes.map((route, i) => (
-        <RouteWithSubRoutes key={i} {...route} />
-      ))
-    }
+    <Route path='/' component={
+      asyncComponent(() =>
+        System.import('./pages').then(module => module.default)
+      )
+    } />
   </div>
 )

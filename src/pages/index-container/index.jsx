@@ -1,19 +1,22 @@
 import React, { PureComponent } from 'react'
+import { Route } from 'react-router-dom'
+import { asyncComponent } from '@utils/routeUtils'
 // import Styles from './index.less'
 
-import { RouteWithSubRoutes } from '@utils/routeUtils'
+const HomePage = asyncComponent(() =>
+  System.import('../home').then(module => module.default)
+)
+const PersonalPage = asyncComponent(() =>
+  System.import('../personal').then(module => module.default)
+)
 
 class IndexContainer extends PureComponent {
   render () {
-    const { routes } = this.props
     return (
       <div className='IndexContainer'>
         <h1>IndexContainer</h1>
-        {
-          routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
-          ))
-        }
+        <Route path='/home' component={HomePage} />
+        <Route path='/personal' component={PersonalPage} />
       </div>
     )
   }

@@ -6,10 +6,9 @@ import avatar from '../../../static/images/default.png'
 class PersonalPage extends PureComponent {
   render () {
     const { kylin, match } = this.props
-    console.log('kylin', kylin, match)
     return (
       <div className={Styles['personal']}>
-        <p>PersonalComponent 个人主页</p>
+        <p>{kylin}的个人主页 {match.path}</p>
         <div className={Styles['test']}>good test</div>
         <img src={avatar} alt='avatar' />
       </div>
