@@ -4,7 +4,7 @@ import Styles from './index.less'
 class HomePage extends PureComponent {
   render () {
     return (
-      <div className={Styles['home-page']}>HomePage</div>
+      <div className={Styles['home-page']}>HomePage<i className='iconfont icon-shouye' /></div>
     )
   }
 }

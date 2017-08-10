@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom'
 import { asyncComponent } from '@utils/routeUtils'
 // import Styles from './index.less'
 
+import NavFootComponent from '@components/nav-foot'
+
 const HomePage = asyncComponent(() =>
   System.import('../home').then(module => module.default)
 )
@@ -17,6 +19,7 @@ class IndexContainer extends PureComponent {
         <h1>IndexContainer</h1>
         <Route path='/home' component={HomePage} />
         <Route path='/personal' component={PersonalPage} />
+        <NavFootComponent />
       </div>
     )
   }

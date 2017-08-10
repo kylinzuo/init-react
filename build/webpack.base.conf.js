@@ -22,7 +22,8 @@ module.exports = {
     alias: {
       '@src': path.resolve(__dirname, '../src'),
       '@utils': path.resolve(__dirname, '../src/utils'),
-      '@less': path.resolve(__dirname, '../src/less')
+      '@less': path.resolve(__dirname, '../src/less'),
+      '@components': path.resolve(__dirname, '../src/components')
     }
   },
   module: {
@@ -40,7 +41,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'stage-0', 'react']
+            presets: ['es2015', 'stage-0', 'react']
           }
         }
       },
