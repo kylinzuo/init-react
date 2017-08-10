@@ -1,10 +1,7 @@
-@color-body-bg: #F0F0F0;
-:global #root {
-  background-color: @color-body-bg;
+:global #app {
   width: 100%;
   height: 100%;
-  max-width: 650px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 a {
   -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -18,4 +15,13 @@ a {
 }
 .flex-grow {
   flex-grow: 1;
+}
+
+@theme-light: #fff;
+@theme-dark: #000;
+.theme-light {
+  background: @theme-light;
+}
+.theme-dark {
+  background: @theme-dark;
 }

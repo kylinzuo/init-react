@@ -4,7 +4,7 @@ import { createStore } from 'redux'
 import FastClick from 'fastclick'
 
 import appStore from './redux/reducers'
-import App from 'src/containers/app'
+import App from '@src/containers/app'
 
 FastClick.attach(document.body)
 

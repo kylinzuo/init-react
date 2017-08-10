@@ -2,6 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter, StaticRouter } from 'react-router-dom'
 import routes from '../routes'
+require('@src/less/global.less')
 
 export default ({ server, location, context, store }) => {
   let router

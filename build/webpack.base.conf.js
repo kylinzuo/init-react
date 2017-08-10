@@ -20,9 +20,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     // fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'src': path.resolve(__dirname, '../src'),
-      'utils': path.resolve(__dirname, '../src/utils'),
-      'less': path.resolve(__dirname, '../src/less')
+      '@src': path.resolve(__dirname, '../src'),
+      '@utils': path.resolve(__dirname, '../src/utils'),
+      '@less': path.resolve(__dirname, '../src/less')
     }
   },
   module: {
@@ -69,7 +69,7 @@ module.exports = {
           loader: "css-loader", // translates CSS into CommonJS
           query: { 
             modules: true,
-            localIdentName: '[name]___[hash:base64:5]'
+            localIdentName: '[name]___[hash:base64:7]'
           }
         },
         {
@@ -91,7 +91,7 @@ module.exports = {
           loader: "css-loader", // translates CSS into CommonJS
           query: { 
             modules: true,
-            localIdentName: '[name]___[hash:base64:5]'
+            localIdentName: '[name]___[hash:base64:7]'
           }
         },
         {

@@ -1,16 +1,5 @@
 import React from 'react'
-import {
-  Link
-} from 'react-router-dom'
-import { asyncComponent, RouteWithSubRoutes } from 'utils/routeUtils'
-
-// const IndexPage = asyncComponent(() =>
-//   System.import('./pages').then(module => module.default)
-// )
-
-// const PersonalPage = asyncComponent(() =>
-//   System.import('./pages/personal').then(module => module.default)
-// )
+import { asyncComponent, RouteWithSubRoutes } from '@utils/routeUtils'
 
 const routes = [
   {
@@ -20,9 +9,23 @@ const routes = [
     ),
     routes: [
       {
-        path: '/personal',
+        path: '/',
         component: asyncComponent(() =>
-          System.import('./pages/personal').then(module => module.default)
+          System.import('./pages/index-container').then(module => module.default)
+        ),
+        routes: [
+          {
+            path: '/personal',
+            component: asyncComponent(() =>
+              System.import('./pages/personal').then(module => module.default)
+            )
+          }
+        ]
+      },
+      {
+        path: '/quotation',
+        component: asyncComponent(() =>
+          System.import('./pages/quotation').then(module => module.default)
         )
       }
     ]
@@ -30,13 +33,11 @@ const routes = [
 ]
 
 export default (
-  <div>
-    <ul>
-      <li>
-        <Link to='/'>home</Link>
-        <Link to='/personal'>personal</Link>
-      </li>
-    </ul>
+  <div className='root' style={{
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden'
+  }}>
     {
       routes.map((route, i) => (
         <RouteWithSubRoutes key={i} {...route} />
