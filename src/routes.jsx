@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { asyncComponent } from '@utils/routeUtils'
+import { asyncComponent } from './utils/routeUtils'
 
 export default (
   <div className='root' style={{

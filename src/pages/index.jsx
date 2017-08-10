@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 import { Switch, Route } from 'react-router-dom'
-import { asyncComponent } from '@utils/routeUtils'
+import { asyncComponent } from '../utils/routeUtils'
 import Styles from './index.less'
-import { isMobile } from '@utils'
+import { isMobile } from '../utils'
 
 const IndexContainer = asyncComponent(() =>
   System.import('./index-container').then(module => module.default)

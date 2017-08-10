@@ -1,4 +1,4 @@
-import { graphQlFetch } from '@src/utils/request'
+import { graphQlFetch } from '../utils/request'
 console.log('graphQlFetch', graphQlFetch)
 
 // 查询首页信息

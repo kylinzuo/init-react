@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch'
-import { graphApi } from '@src/constants'
+import { graphApi } from '../constants'
 console.log('graphApi', graphApi)
 function parseJSON (response) {
   return response.json()

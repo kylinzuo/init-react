@@ -26,7 +26,7 @@ input[type=submit],input[type=button],[class^=btn-],button{cursor:pointer;}
 input[type="submit"]:hover, input[type="button"]:hover, [class^=btn-]:hover { filter:alpha(opacity=70);opacity:.7;}
 input::-moz-focus-inner{border:0;padding:0}
 
-a{cursor: pointer;text-decoration: none;} /*默认a标签样式  保持样式一样*/
+a{cursor: pointer;text-decoration: none;-webkit-tap-highlight-color: rgba(0,0,0,0);} /*默认a标签样式  保持样式一样*/
 
 h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:500;}  /*来自yahoo, 让标题都自定义, 适应多个系统应用*/
 .clearfix {*zoom: 1;}

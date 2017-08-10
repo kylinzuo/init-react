@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Route } from 'react-router-dom'
-import { asyncComponent } from '@utils/routeUtils'
+import { asyncComponent } from '../../utils/routeUtils'
 // import Styles from './index.less'
 
 import NavFootComponent from '@components/nav-foot'
