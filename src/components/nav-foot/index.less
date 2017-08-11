@@ -1,9 +1,26 @@
+@size-icon: 40px;
 .nav-foot {
   color: #868686;
+  display: table;
   font-family: PingFangSC-Regular;
   font-size: 20px;
+  width: 100%;
   height: 98px;
   li {
+    display: table-cell;
     height: 100%;
+    .link {
+      color: #D8D8D8;
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      span {
+        display: block;
+        line-height: @size-icon;
+        i {
+          font-size: @size-icon;
+        }
+      }
+    }
   }
 }

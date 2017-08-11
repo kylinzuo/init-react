@@ -5,11 +5,11 @@ import { asyncComponent } from '../utils/routeUtils'
 import Styles from './index.less'
 import { isMobile } from '../utils'
 
+const StockPage = asyncComponent(() =>
+  System.import('./stock').then(module => module.default)
+)
 const IndexContainer = asyncComponent(() =>
   System.import('./index-container').then(module => module.default)
-)
-const QuotationPage = asyncComponent(() =>
-  System.import('./quotation').then(module => module.default)
 )
 
 class IndexPage extends Component {
@@ -22,7 +22,7 @@ class IndexPage extends Component {
         }}
       >
         <Switch>
-          <Route path='/quotation' component={QuotationPage} />
+          <Route path='/stock' component={StockPage} />
           <Route path='/' component={IndexContainer} />
         </Switch>
       </div>

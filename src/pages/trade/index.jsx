@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Styles from './index.less'
 
-class HomePage extends Component {
+class TradePage extends Component {
   render () {
     return (
-      <div className={Styles['home-page']}>
-        HomePage
+      <div className={Styles['trade-page']}>
+        TradePage
       </div>
     )
   }
 }
 
-export default HomePage
+export default TradePage

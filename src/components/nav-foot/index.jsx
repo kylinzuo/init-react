@@ -1,9 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import classnames from 'classnames'
 import Styles from './index.less'
 
-class NavFootComponent extends PureComponent {
+class NavFootComponent extends Component {
   constructor (props) {
     super(props)
   }
@@ -11,41 +12,52 @@ class NavFootComponent extends PureComponent {
     dataSource: [
       {
         text: '首页',
-        path: 'home',
+        path: '/',
         icon: 'icon-shouye'
       },
       {
-        text: '首页',
-        path: 'home',
-        icon: 'icon-shouye'
+        text: '行情',
+        path: '/quotation',
+        icon: 'icon-hangqing'
       },
       {
-        text: '首页',
-        path: 'home',
-        icon: 'icon-shouye'
+        text: '交易',
+        path: '/trade',
+        icon: 'icon-jiaoyi1'
       },
       {
-        text: '首页',
-        path: 'home',
-        icon: 'icon-shouye'
+        text: '我的',
+        path: '/personal',
+        icon: 'icon-wode'
       }
     ]
   }
 
   render () {
     const {dataSource} = this.props
-    console.log('dataSource', dataSource)
     return (
       <ul className={Styles['nav-foot']}>
-        {/* {
+        {
           dataSource.map((d, i) => {
+            const exact = i === 0 ? {exact: true} : {}
             return (
-              <li>
-                <Link to={d.path}>{d.text}</Link>
+              <li key={i}>
+                <NavLink
+                  {...exact}
+                  to={d.path}
+                  className={Styles['link']}
+                  activeClassName='selected'
+                  activeStyle={{
+                    color: '#558DED'
+                  }}
+                >
+                  <span><i className={classnames('iconfont', d.icon)} /></span>
+                  {d.text}
+                </NavLink>
               </li>
             )
           })
-        } */}
+        }
       </ul>
     )
   }
