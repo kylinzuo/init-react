@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Styles from './index.less'
 import avatar from '../../../static/images/default.png'
@@ -20,6 +21,11 @@ const mapStateToProps = (state) => {
   return {
     kylin: state.kylin
   }
+}
+
+PersonalPage.propTypes = {
+  kylin: PropTypes.string,
+  match: PropTypes.object
 }
 
 export default connect(mapStateToProps)(PersonalPage)

@@ -63,7 +63,7 @@ class NavFootComponent extends Component {
   }
 }
 
-NavFootComponent.prototypes = {
+NavFootComponent.propTypes = {
   dataSource: PropTypes.array
 }
 

@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter, StaticRouter } from 'react-router-dom'
 import routes from '../routes'
 // require('../less/global.less')
 
-export default ({ server, location, context, store }) => {
+const App = ({ server, location, context, store }) => {
   let router
   if (server) {
     router = (
@@ -29,3 +30,12 @@ export default ({ server, location, context, store }) => {
     </Provider>
   )
 }
+
+App.propTypes = {
+  server: PropTypes.any,
+  location: PropTypes.any,
+  context: PropTypes.any,
+  store: PropTypes.object
+}
+
+export default App
