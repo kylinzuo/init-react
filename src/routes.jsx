@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { asyncComponent } from './utils/routeUtils'
 
 export default (
@@ -8,10 +8,12 @@ export default (
     height: '100%',
     overflow: 'hidden'
   }}>
-    <Route path='/' component={
-      asyncComponent(() =>
-        System.import('./pages').then(module => module.default)
-      )
-    } />
+    <Switch>
+      <Route path='/' component={
+        asyncComponent(() =>
+          System.import('./pages').then(module => module.default)
+        )
+      } />
+    </Switch>
   </div>
 )
