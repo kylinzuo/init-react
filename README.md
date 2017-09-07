@@ -97,19 +97,21 @@ const template = `${a} world`
   ```
 
 ## 文件结构
-src
-.
-├── client.jsx                    // app 入口
-├── routes.jsx                    // routes 入口
-├── serser.jsx                    // 服务端渲染启动
-├── components                    // 公用组件库
-├── containers                    // redux&route 根组件
-├── less                          // 全局样式库
-├── pages                         // 页面
-│   ├── index.jsx                   // root page
-├── redux                         // redux 全局状态管理
-├── services                      // 接口请求
-├── utils                         // 工具库
+- src
+ ```
+  .
+  ├── client.jsx                    // app 入口
+  ├── routes.jsx                    // routes 入口
+  ├── serser.jsx                    // 服务端渲染启动
+  ├── components                    // 公用组件库
+  ├── containers                    // redux&route 根组件
+  ├── less                          // 全局样式库
+  ├── pages                         // 页面
+  │   ├── index.jsx                   // root page
+  ├── redux                         // redux 全局状态管理
+  ├── services                      // 接口请求
+  ├── utils                         // 工具库
+ ```
 
 ## 技术栈相关文档推荐
 核心技术栈(包括但不限于以下)：
