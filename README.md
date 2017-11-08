@@ -1,5 +1,9 @@
 # base on react
 
+## 增加了图片压缩loader image-webpack-loader
+
+mac引用jpg图片时会报错需要 brew install libpng
+
 ## 常用命令
 
 详细命令查看package.json scripts
