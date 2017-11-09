@@ -60,8 +60,9 @@ module.exports = {
               progressive: true,
               quality: 65
             },
+            // optipng.enabled: false will disable optipng
             optipng: {
-              enabled: true,
+              enabled: true
             },
             pngquant: {
               quality: '65-90',
@@ -70,9 +71,10 @@ module.exports = {
             gifsicle: {
               interlaced: false,
             },
-            webp: {
-              quality: 75
-            }
+            // the webp option will enable WEBP
+            // webp: {
+            //   quality: 75
+            // }
           }
         }]
       },
